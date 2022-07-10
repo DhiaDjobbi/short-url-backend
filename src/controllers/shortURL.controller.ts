@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import createURLService from "../services/shortURL/createURL.service";
+import generateURLService from "../services/shortURL/generateURL.service";
 
 export const generateURL = async (req: Request, res: Response) => {
   const { destination } = req.body;
-  const createResult = await createURLService(destination);
+  const createResult = await generateURLService(destination);
   let statusCode = 200;
   if (createResult?.status === "error") {
     statusCode = 400;
