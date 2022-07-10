@@ -1,9 +1,8 @@
 import { Express, Request, Response } from "express";
+import { generateURL } from "../controllers/shortURL.controller";
 
 const routes = (app: Express) => {
-  app.get("/", (req: Request, res: Response) => {
-    return res.send("Hello World!");
-  });
+  app.post("/api/url", generateURL);
 };
 
 export default routes;
